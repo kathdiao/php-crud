@@ -15,8 +15,7 @@
         <th>First Name</th>
         <th>Last Name</th>
         <th>Age</th>
-        <th>Update</th>
-        <th>Delete</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -54,7 +53,9 @@ if(isset($_GET['message'])){
         . htmlspecialchars($_GET['message']) .
         '</div>';
 }
+?>
 
+<?php
 if(isset($_GET['insert_msg'])){
     echo '<div class="alert alert-success" role="alert">'
         . htmlspecialchars($_GET['insert_msg']) .
@@ -62,7 +63,24 @@ if(isset($_GET['insert_msg'])){
 }
 ?>
 
-<!-- Modal -->
+<?php
+if(isset($_GET['update_msg'])){
+    echo '<div class="alert alert-success" role="alert">'
+        . htmlspecialchars($_GET['update_msg']) .
+        '</div>';
+}
+?>
+
+<?php
+if(isset($_GET['delete_msg'])){
+    echo '<div class="alert alert-danger" role="alert">'
+        . htmlspecialchars($_GET['delete_msg']) .
+        '</div>';
+}
+?>
+
+
+
  <form action="insert_data.php" method="post">
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -74,15 +92,15 @@ if(isset($_GET['insert_msg'])){
       <div class="modal-body">
           <div class="form-group">
             <label for="fname"> First Name</label>
-            <input type="text" name="fname" class="form-control">
+            <input type="text" name="fname" class="form-control" required>
           </div>
              <div class="form-group">
             <label for="lname"> Last Name</label>
-            <input type="text" name="lname" class="form-control">
+            <input type="text" name="lname" class="form-control" required>
           </div>
              <div class="form-group">
             <label for="age"> Age</label>
-            <input type="text" name="age" class="form-control">
+            <input type="text" name="age" class="form-control" required>
           </div>
       </div>
       <div class="modal-footer">

@@ -19,7 +19,7 @@ if(isset($_POST['add_student'])){
       die("Query Failed".mysqli_error($conn));
     }
     else {
-      header('location:index.php?insert_msg=Your data has been added successfully');
+      header('location:index.php?insert_msg=Record added successfully!');
       exit;
     }
   }
